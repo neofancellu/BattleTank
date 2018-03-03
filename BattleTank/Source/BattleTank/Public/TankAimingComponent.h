@@ -2,7 +2,7 @@
 
 #pragma once
 
-#include "CoreMinimal.h"
+#include "Engine.h"
 #include "Components/ActorComponent.h"
 #include "TankAimingComponent.generated.h"
 
@@ -15,6 +15,7 @@ class BATTLETANK_API UTankAimingComponent : public UActorComponent
 public:	
 	// Sets default values for this component's properties
 	UTankAimingComponent();
+	void SetBarrelReference(UStaticMeshComponent* BarrelToSet);
 
 protected:
 	// Called when the game starts
@@ -26,4 +27,6 @@ public:
 
 	void AimAt(FVector WorldSpaceAim);
 	
+private:
+	UStaticMeshComponent* Barrel = nullptr;
 };
